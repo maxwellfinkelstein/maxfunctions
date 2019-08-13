@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561616507151.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1432274034",
+    "id" : "9838FF6E",
+    "lastKnownWriteTime" : 1564717919,
+    "last_content_update" : 1564717919141,
+    "path" : "~/Dropbox/R Scripts/maxfunctions/R/Max's Stats Functions.R",
+    "project_path" : "R/Max's Stats Functions.R",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
