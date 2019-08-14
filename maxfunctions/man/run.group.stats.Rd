@@ -9,16 +9,17 @@
 
 This is the main function to quickly calculate statistics relating categorical x groups.
 Function requires 3 inputs: x_var, y_var, and df_to_analyze
-Function is for categorical x groups - does not work for ordinal x groups
+
+Function is for categorical x groups - does not work for ordinal x groups.
 
 Tests default to two sided tests for difference, rather than tests for greater/lesser.
 Model assessments are not conducted, and detailed modelling should be done manually.
 
-If repeated measures data is in wide format (one column for first measure and separate column for
-next measure), select columns and run the command below to put all measures in the same column
+If repeated measures data is in wide format (one column for first measure and separate column for next measure), select columns and run the command below to put all measures in the same column:
+
 df_to_analyze<-gather(Analyzing_the_Preliminary_DR_Data_on_RStudio,'Key','Name of y Variable',c(8,10)) , eg for columns 8 and 10
-This is required for the stats function to work; check the resulting df and column classes,
-then set x_var='Key' and y_var='Name of y Variable'
+
+This is required for the stats function to work; check the resulting df and column classes, then set x_var='Key' and y_var='Name of y Variable'
 
 }
 \usage{
@@ -29,6 +30,7 @@ run.group.stats(df_to_analyze = Analyzing_the_Preliminary_DR_Data_on_RStudio,x_v
 
 For looping through the 3rd-48th variable in a dataframe:
 
+#Note that the group_dependence argument is optional
 for (i in 3:48) {
   out<-capture.output(run.group.stats(df_to_analyze = EYC,x_var = "Order",y_var = names(EYC)[i],group_dependence="Eye"))
   cat(out, file="Dropbox/SERI/Pupillometry Data/SUMMER 2019 DATA/DataAnalysis/Stats Output/summary_of_prelim_diabetes_stats.txt", sep="\n", append=TRUE)

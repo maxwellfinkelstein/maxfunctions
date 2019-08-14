@@ -7,14 +7,20 @@
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 This is the main function to quickly draw a graph comparing categorical x groups.
+
 Function requires 3 inputs: x_var, y_var, and df_to_analyze
-Function is for categorical x groups - does not work for ordinal x groups
+
+Function is for categorical x groups - does not work for ordinal x groups.
 
 
 }
 \usage{
+For a single iteration:
+
 run.group.stats(df_to_analyze = Analyzing_the_Preliminary_DR_Data_on_RStudio,x_var = "Diagnosis",y_var = "Max.Blue")
 
+
+For looping through the 4th-7th variable in a dataframe:
 
 p<-list()
 for (i in 4:7){
@@ -22,7 +28,11 @@ for (i in 4:7){
   p[[i-3]]<-quick.graph(df_to_analyze = Analyzing_the_Preliminary_DR_Data_on_RStudio,
                         x_var = "Diagnosis",y_var = y_var)
 }
-do.call(grid.arrange,p)
+plots_arranged<-do.call(arrangeGrob,c(p,nrow=2))
+grid.arrange(plots_arranged)
+ggsave(plot=plots_arranged,filename = "/Users/maxwellfinkelstein/Dropbox/SERI/Pupillometry Data/SUMMER 2019 DATA/DataAnalysis/Plots/PLRFeatsByDR.tiff",dpi = 100,height = 7,width = 14)
+
+
 
 }
 %- maybe also 'usage' for other objects documented here.
