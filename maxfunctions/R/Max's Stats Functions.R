@@ -338,13 +338,13 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
       print(fisher.test(freq_table))
       require(rcompanion)
       print(pairwiseNominalIndependence(freq_table,fisher = TRUE,gtest  = FALSE,
-                                  chisq  = FALSE,method = "BH"))
+                                  chisq  = FALSE,method = "BH",compare = "column"))
       print("Method of Fisher's Test p value adjustment: Benjamini–Hochberg",quote=FALSE)
     }else{
       print(chi_square_result)
       require(rcompanion)
       print(pairwiseNominalIndependence(freq_table,fisher = FALSE,gtest  = FALSE,
-                                  chisq  = TRUE,method = "BH"))
+                                  chisq  = TRUE,method = "BH",compare = "column"))
       print("Method of Chi Square p value adjustment: Benjamini–Hochberg",quote=FALSE)
     }
 
