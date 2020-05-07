@@ -227,6 +227,7 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
       #Run Fisher's Exact Test
       attributes(freq_table)$class <- "matrix"
       fisher.test(freq_table,workspace = 2e8)
+      print("Fisher Test workspace size: 2e8",quote = F)
     }else{
       print(chi_square_result)
     }
@@ -336,6 +337,7 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
     if(any(chi_square_result$expected<5)==TRUE){
       #Run Fisher's Exact Test
       print(fisher.test(freq_table),workspace = 2e8)
+      print("Fisher Test workspace size: 2e8",quote = F)
       require(rcompanion)
       print(pairwiseNominalIndependence(freq_table,fisher = TRUE,gtest  = FALSE,
                                   chisq  = FALSE,method = "BH",compare = "column"))
