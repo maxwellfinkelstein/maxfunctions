@@ -229,11 +229,12 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
       #Run Fisher's Exact Test. If error, try Monte Carlo simulation to calculate p value.
       #Monte Carlo simulation would fix errors caused by insufficient workspace when using
       #Fisher test on large, non 2x2 tables.
-      tryCatch(fisher.test(freq_table),
+      tryCatch(print(fisher.test(freq_table)),
                error=function(error_message){
                  print("Error generated on normal Fisher Test. Monte Carlo simulation used instead.",quote=F)
-                 fisher.test(freq_table,simulate.p.value = T)
+                 print(fisher.test(freq_table,simulate.p.value = T))
                })
+
 
 
     }else{
@@ -346,11 +347,12 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
       #Run Fisher's Exact Test. If error, try Monte Carlo simulation to calculate p value.
       #Monte Carlo simulation would fix errors caused by insufficient workspace when using
       #Fisher test on large, non 2x2 tables.
-      tryCatch(fisher.test(freq_table),
+      tryCatch(print(fisher.test(freq_table)),
                error=function(error_message){
                  print("Error generated on normal Fisher Test. Monte Carlo simulation used instead.",quote=F)
-                 fisher.test(freq_table,simulate.p.value = T)
+                 print(fisher.test(freq_table,simulate.p.value = T))
                })
+
 
 
       require(rcompanion)
