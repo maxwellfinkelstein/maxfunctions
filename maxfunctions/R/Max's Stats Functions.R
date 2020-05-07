@@ -226,7 +226,15 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
     if(any(chi_square_result$expected<5)==TRUE){
       #Run Fisher's Exact Test
       attributes(freq_table)$class <- "matrix"
-      fisher.test(freq_table,workspace = 2e9)
+      #Run Fisher's Exact Test. If error, try Monte Carlo simulation to calculate p value.
+      #Monte Carlo simulation would fix errors caused by insufficient workspace when using
+      #Fisher test on large, non 2x2 tables.
+      tryCatch(fisher.test(freq_table),
+               error=function(error_message){
+                 print("Error generated on normal Fisher Test. Monte Carlo simulation used instead.",quote=F)
+                 fisher.test(freq_table,simulate.p.value = T)
+               })
+
 
     }else{
       print(chi_square_result)
@@ -335,8 +343,15 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
     cat(paste("","",sep="\n"))
     chi_square_result<-chisq.test(freq_table)
     if(any(chi_square_result$expected<5)==TRUE){
-      #Run Fisher's Exact Test
-      print(fisher.test(freq_table),workspace = 2e9)
+      #Run Fisher's Exact Test. If error, try Monte Carlo simulation to calculate p value.
+      #Monte Carlo simulation would fix errors caused by insufficient workspace when using
+      #Fisher test on large, non 2x2 tables.
+      tryCatch(fisher.test(freq_table),
+               error=function(error_message){
+                 print("Error generated on normal Fisher Test. Monte Carlo simulation used instead.",quote=F)
+                 fisher.test(freq_table,simulate.p.value = T)
+               })
+
 
       require(rcompanion)
       print(pairwiseNominalIndependence(freq_table,fisher = TRUE,gtest  = FALSE,
