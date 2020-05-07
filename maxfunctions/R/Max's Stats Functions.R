@@ -218,7 +218,7 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
     #Selects only x_var and y_var columns from the data frame
     subsetted_df_to_analyze<-df_to_analyze_without_na[,names(df_to_analyze_without_na)%in%c(x_var,y_var)]
     #Converts data to a frequency table, then runs the chi square test
-    freq_table<-table(subsetted_df_to_analyze)
+    freq_table<-table(subsetted_df_to_analyze[[y_var]],subsetted_df_to_analyze[[x_var]],dnn = c(y_var,x_var))
     cat(paste("","",sep="\n"))
     print(freq_table)
     cat(paste("","",sep="\n"))
@@ -337,7 +337,7 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
     #Selects only x_var and y_var columns from the data frame
     subsetted_df_to_analyze<-df_to_analyze_without_na[,names(df_to_analyze_without_na)%in%c(x_var,y_var)]
     #Converts data to a frequency table, then runs the chi square test
-    freq_table<-table(subsetted_df_to_analyze)
+    freq_table<-table(subsetted_df_to_analyze[[y_var]],subsetted_df_to_analyze[[x_var]],dnn = c(y_var,x_var))
     attributes(freq_table)$class <- "matrix"
     cat(paste("","",sep="\n"))
     print(freq_table)
