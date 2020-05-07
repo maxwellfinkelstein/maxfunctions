@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "569397064",
+    "hash" : "3484761945",
     "id" : "9838FF6E",
-    "lastKnownWriteTime" : 1578721015,
-    "last_content_update" : 1578721015569,
+    "lastKnownWriteTime" : 1588873317,
+    "last_content_update" : 1588873317755,
     "path" : "~/Dropbox/R Scripts/maxfunctions/R/Max's Stats Functions.R",
     "project_path" : "R/Max's Stats Functions.R",
     "properties" : {
-        "cursorPosition" : "346,80",
-        "scrollLine" : "332"
+        "cursorPosition" : "332,21",
+        "scrollLine" : "328"
     },
     "read_only" : false,
     "read_only_alternatives" : [
