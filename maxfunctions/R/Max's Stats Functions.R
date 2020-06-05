@@ -71,7 +71,7 @@ run.group.stats<-function(df_to_analyze,x_var,y_var,group_dependence=FALSE,y_ord
     stats_to_run<-define.group.stats.for.numerical.y.variable(df_to_analyze_without_na,x_var,y_var,
                                           group_dependence,number_of_unique_x_groups)
   }else{
-    "There is an error - y var is not categorical or numerical."
+    stats_to_run<-"There is an error - y var is not categorical or numerical."
 
   }
   print(stats_to_run, quote=FALSE)
@@ -196,6 +196,8 @@ run.the.stats<-function(df_to_analyze_without_na,group_dependence,x_var,y_var,st
   }else if(stats_to_run=="Error - more than two x groups and numerical/ordinal y but unknown group dependence"){
     print("Error- Unable to run stats as stats_to_run contains an error.",quote=FALSE)
   }else if(stats_to_run=="There is an error - the numerical/ordinal y stats don't know how many x groups there are"){
+    print("Error- Unable to run stats as stats_to_run contains an error.",quote=FALSE)
+  }else if(stats_to_run=="There is an error - y var is not categorical or numerical."){
     print("Error- Unable to run stats as stats_to_run contains an error.",quote=FALSE)
 
 
