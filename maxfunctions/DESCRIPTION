@@ -4,7 +4,7 @@ Title: Defines Max's functions for quickly drawing graphs and running statistica
 Version: 0.1.0
 Author: Maxwell Finkelstein
 Maintainer: Maxwell Finkelstein <maxwell.finkelstein@gmail.com>
-Description: Defines quick.graph and run.group.stats (along with subfunctions) to run analyses.
+Description: Defines quick.graph, demographics.table and run.group.stats (along with subfunctions) to run analyses.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
