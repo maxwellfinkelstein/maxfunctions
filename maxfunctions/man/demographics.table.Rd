@@ -11,13 +11,6 @@ This function creates demographics/description tables of variables.
 
 Does not automatically add p-values/show significance.
 
-Inputs:
-  df_to_analyze: the dataframe with the data
-  x_var: chr name of the column in df_to_analyze whose groups will be described
-  y_vars: vector of chr names of columns in df_to_analyze with demographics to analyze
-  sd: for numeric y_vars; If 1 displays mean (sd), if 2 displays median (IQR), if 3
-      then it assesses the data and chooses automatically. Else error.
-
 Returns the demographics table as a dataframe.
 
 }
